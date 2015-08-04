@@ -2,9 +2,9 @@
 Quickly setup everything you for developing react native apps in hackathons
 
 ## TOC
-- (Features)[https://github.com/smore-inc/react-native-hackathon-bootstrap#features]
-- (Getting Started)[https://github.com/smore-inc/react-native-hackathon-bootstrap#getting-started]
-- (Resources)[https://github.com/smore-inc/react-native-hackathon-bootstrap#resources]
+- [Features](#features)
+- [Getting Started](#getting-started)
+- [Resources](#resources)
 
 ## Features
 - React Native 0.9.0-rc
@@ -39,11 +39,11 @@ For editing the React native app code, we suggest you use [Atom](http://www.atom
 If you choose to use Atom, you can run the `./hack init-atom` to automatically install a few packages that
 will help you with the development process.
 The packages:
-- (react)[https://atom.io/packages/react]
-- (linter)[https://atom.io/packages/linter]
-- (linter-eslint)[https://atom.io/packages/linter-eslint]
-- (pigments)[https://atom.io/packages/pigments]
-- (tree-view-git-status)[https://atom.io/packages/tree-view-git-status]
+- [react](https://atom.io/packages/react)
+- [linter](https://atom.io/packages/linter)
+- [linter-eslint](https://atom.io/packages/linter-eslint)
+- [pigments](https://atom.io/packages/pigments)
+- [tree-view-git-status](https://atom.io/packages/tree-view-git-status)
 
 **Folder Structure**
 
