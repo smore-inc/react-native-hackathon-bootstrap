@@ -2,10 +2,9 @@
 Quickly setup everything you for developing react native apps in hackathons
 
 ## TOC
-
-- Features
-- Getting Started
-- Resources
+- (Features)[https://github.com/smore-inc/react-native-hackathon-bootstrap#features]
+- (Getting Started)[https://github.com/smore-inc/react-native-hackathon-bootstrap#getting-started]
+- (Resources)[https://github.com/smore-inc/react-native-hackathon-bootstrap#resources]
 
 ## Features
 - React Native 0.9.0-rc
