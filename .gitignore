@@ -35,3 +35,8 @@ Pods/
 
 # React native bundle
 main.jsbundle
+
+# Python
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
