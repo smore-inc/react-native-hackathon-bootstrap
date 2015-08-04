@@ -1,0 +1,16 @@
+machine:
+  node:
+    version: iojs-v1.3.0
+
+dependencies:
+  override:
+    - npm install
+
+test:
+  pre:
+    - mkdir -p $CIRCLE_TEST_REPORTS/eslint
+    - mkdir -p $CIRCLE_TEST_REPORTS/jest
+
+  override:
+    - npm run lint-ci
+    - npm run test-ci
