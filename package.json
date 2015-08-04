@@ -3,9 +3,47 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node_modules/react-native/packager/packager.sh"
+    "start": "node_modules/react-native/packager/packager.sh",
+    "test": "node_modules/.bin/jest",
+    "lint": "node_modules/.bin/gulp lint;",
+    "test-ci": "node_modules/.bin/jest --testEnvData=\"{\\\"circleTestFolder\\\":\\\"${CIRCLE_TEST_REPORTS}\\\"}\"",
+    "lint-ci": "node_modules/.bin/gulp lint-ci;"
   },
   "dependencies": {
-    "react-native": "^0.8.0"
+    "react-native": "0.9.0-rc",
+    "eventemitter3": "^1.1.1",
+    "flux": "^2.0.3",
+    "immutable": "^3.7.4",
+    "keymirror": "^0.1.1",
+    "moment": "^2.10.3",
+    "object-assign": "^3.0.0",
+    "react-native-side-menu": "0.9.5",
+    "react-native-vector-icons": "0.6.8",
+    "react-pure-render": "^1.0.2",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "gulp-shell": "^0.4.2",
+    "babel-eslint": "^3.1.20",
+    "eslint": "^0.24.0",
+    "eslint-plugin-react": "^2.6.4",
+    "gulp": "^3.9.0",
+    "gulp-eslint": "^0.15.0",
+    "jasmine-reporters": "^1.0.0",
+    "jest-cli": "facebook/jest#0.5.x"
+  },
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/node_modules/react-native/jestSupport/scriptPreprocess.js",
+    "setupEnvScriptFile": "<rootDir>/node_modules/react-native/jestSupport/env.js",
+    "setupTestFrameworkScriptFile": "<rootDir>/node_modules/react-native/jestSupport/setupJasmineEnv.js",
+    "testFileExtensions": [
+      "js"
+    ],
+    "testPathDirs": [
+      "<rootDir>/ReactApp"
+    ],
+    "unmockedModulePathPatterns": [
+      "source-map"
+    ]
   }
 }

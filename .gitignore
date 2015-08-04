@@ -26,3 +26,12 @@ project.xcworkspace
 #
 node_modules/
 npm-debug.log
+
+# Cocoa pods
+Pods/
+
+# Webstorm
+.idea
+
+# React native bundle
+main.jsbundle
