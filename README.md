@@ -7,22 +7,22 @@ Quickly setup everything you need for developing react native apps in hackathons
 - [Resources](#resources)
 
 ## Features
-- React Native 0.9.0-rc
+- [React Native 0.9.0-rc](https://github.com/facebook/react-native/releases/tag/v0.9.0-rc)
+- [ESLint](http://eslint.org/) with react support
+- [Jest](https://facebook.github.io/jest/docs/tutorial-react.html#content) tests + npm test support
+- [ES6 modules](http://www.2ality.com/2014/09/es6-modules-final.html) support
+- [.editorconfig](http://editorconfig.org/) file
+- [CircleCI](https://circleci.com/docs) integration
+- [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons) integration
+- [react-native-side-menu](https://github.com/Kureev/react-native-side-menu) integration
 - Custom .babelrc file with more ES6 goodies
-- CircleCI integration
-- ESLint with react support
-- Jest tests + npm test support
-- ES6 modules support
-- Gulp file with lint/test/clear-cache/bundle tasks
-- .editorconfig file
-- XCode configuration for auto-bundling and compiling for release
-- react-native-vector-icons integration
-- react-native-side-menu integration
 - Simple flux implementation with StoreComponent for easy integration
-- CocoaPods integration
-- Simple folder structure for the project
-- Cool setup script so all of your team members could be up and running asap
+- [CocoaPods](https://cocoapods.org/) integration
+- Cool [setup script](#getting-started) so all of your team members could be up and running ASAP
 - App launch screen design + default icon
+- Simple folder structure for the project
+- XCode configuration for auto-bundling and compiling for release
+- [Gulp](http://gulpjs.com/) file with lint/test/clear-cache/bundle tasks
 
 ## Getting started
 *The setup script only works for mac, sorry*
@@ -33,8 +33,8 @@ Then, go to the project folder and run:
 ```
 Follow the setup script, you may be asked for your password (this is required for installing cocoapods)
 
-**Editor Setup**
-For editing the React native app code, we suggest you use [Atom](http://www.atom.io) / [WebStorm](https://www.jetbrains.com/webstorm/)
+**Editor Setup**  
+For editing the React native app code, we suggest you use [Atom](http://www.atom.io) / [WebStorm](https://www.jetbrains.com/webstorm/).
 
 If you choose to use Atom, you can run the `./hack init-atom` to automatically install a few packages that
 will help you with the development process.
@@ -50,6 +50,8 @@ The packages:
 
 
 ## Resources
+- ES6 Features 
+- React components with ES6
 - React Native Docs
 - Component lifecycle
 - Working with ListView
