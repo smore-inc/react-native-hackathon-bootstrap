@@ -20,3 +20,9 @@ Quickly setup everything you for developing react native apps in hackathons
 
 ## Setting up
 *The setup script only works for mac, sorry*
+First, you need to download and install [XCode 6.4](https://developer.apple.com/xcode/downloads/)
+Then, go to the project folder and run: 
+```sh
+./hack init
+```
+Follow the setup script, you may be asked for your password (this is required for installing cocoapods)
