@@ -1,5 +1,5 @@
 # react-native-hackathon-bootstrap
-Quickly setup everything you for developing react native apps in hackathons
+Quickly setup everything you need for developing react native apps in hackathons.
 
 ## TOC
 - [Features](#features)
