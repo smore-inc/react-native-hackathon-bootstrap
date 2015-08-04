@@ -4,12 +4,50 @@ Hack script
 """
 
 import sys
+from time import sleep
 from argparse import ArgumentParser
 from termcolor import colored
-from utils import run_command, has_command
+from utils import run_command, has_command, report, report_success, Icons
 
 def run_init_command(args):
     """Initialize the envirionment."""
+    report("Setting up HackApp development env", icon=Icons.lollipop, section=True)
+
+    report("Starting setup. This is going to take a while, go grab a coffee", color="magenta", section=True,
+           icon=Icons.coffee)
+    print ""
+    sleep(3)
+
+    report("Testing for brew", section=True)
+    if not has_command("brew"):
+        report("Please install brew to setup the env (go to http://brew.sh/)", color="red")
+        return
+
+    report_success("Found brew!")
+
+    report("Updating brew packages", section=True)
+    run_command("brew update")
+
+    report("Installing iojs", section=True)
+    run_command("brew unlink node")
+    run_command("brew install iojs watchman flow && brew link iojs --force")
+    report_success("Installed iojs")
+
+    report("Instaling global npm packages", section=True)
+    run_command("npm install -g react-native-cli gulp")
+
+    report("Instaling project npm packages", section=True)
+    run_command("npm install")
+    report_success("Installed all node dependencies!")
+
+    report("Setting up CocoaPods", section=True)
+    run_command("sudo gem install cocoapods --no-ri --no-rdoc")
+    report("Installed cocoapods, updating pods")
+    run_command("pod install")
+
+    report_success("All done!")
+    run_command('open HackApp.xcworkspace')
+
 
 def run_open_command(args):
     """Open the project in XCode."""
