@@ -15,8 +15,8 @@ Quickly setup everything you for developing react native apps in hackathons
 - Simple flux implementation with StoreComponent for easy integration
 - CocoaPods integration
 - Simple folder structure for the project
-- Navigator + Side
 - Cool setup script so all of your team members could be up and running asap
+- App launch screen design + default icon
 
 ## Setting up
 *The setup script only works for mac, sorry*
