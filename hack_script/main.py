@@ -53,6 +53,12 @@ def run_open_command(args):
     """Open the project in XCode."""
     run_command('open HackApp.xcworkspace')
 
+def run_atom_init_command(args):
+    """Installing atom related packages."""
+    run_command('apm install linter linter-eslint pigments react tree-view-git-status')
+    report_success("Installed atom packages!")
+    run_command("atom .")
+
 
 ##############################################################################
 # Parsing and options
@@ -73,6 +79,8 @@ def _get_parser():
 
     # commands
     init_cmd = subparsers.add_parser('init', help='Init the environment and open the XCode project')
+    init_cmd = subparsers.add_parser('atom-init', help='Install useful atom plugins')
+
     open_cmd = subparsers.add_parser('open', help='Open the project in XCode')
 
     return parser
@@ -84,13 +92,15 @@ def run(args, unknown_args, parser):
 
     Most of the time we'll just get the right sub parser and run the matching command
     """
-    # Restart command
+
     if args.subparser == 'init':
         run_init_command(args)
 
-    # Tail command
     if args.subparser == 'open':
         run_open_command(args)
+
+    if args.subparser == 'atom-init':
+        run_atom_init_command(args)
 
 
 def start():

@@ -9,7 +9,7 @@ const {
   StyleSheet,
   Text,
   View,
-  Component
+  Component,
 } = React;
 
 class HackApp extends Component{
@@ -31,6 +31,8 @@ class HackApp extends Component{
     );
   }
 }
+
+
 
 const styles = StyleSheet.create({
   container: {
