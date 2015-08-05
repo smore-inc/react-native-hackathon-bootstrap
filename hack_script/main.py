@@ -30,7 +30,9 @@ def run_init_command(args):
 
     report("Installing iojs", section=True)
     run_command("brew unlink node")
-    run_command("brew install iojs watchman flow && brew link iojs --force")
+    run_command("brew install iojs && brew link iojs --force")
+    run_command("brew install watchman")
+    run_command("brew install flow")
     report_success("Installed iojs")
 
     report("Instaling global npm packages", section=True)
