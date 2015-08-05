@@ -50,17 +50,47 @@ The packages:
 
 
 ## Resources
-- ES6 Features 
-- React components with ES6
-- React Native Docs
-- Component lifecycle
-- Working with ListView
-- Working with Navigator
-- Thinking in React
-- What the Flux and working with flux
-- Animated
-- Creating app Icons
-- React.parts
-- Ionicons
-- Jest tests
-- CircleCI
+
+### React
+- [**Thinking in react**](https://facebook.github.io/react/docs/thinking-in-react.html)  
+A good tutorial for designing react components.
+- [**React on ES6+**](http://babeljs.io/blog/2015/06/07/react-on-es6-plus/)  
+Blog post on the ES6+ way of writing components.
+- [**Component spec and lifecycle**](https://facebook.github.io/react/docs/component-specs.html)  
+Reference for all the lifecycle methods of components.
+- [**Reusable Components**](https://facebook.github.io/react/docs/reusable-components.html)  
+On writing resuable components and the usage of propTypes.
+- [**Jest react tutorial**](https://facebook.github.io/jest/docs/tutorial-react.html)  
+Tutorial on testing react components with Jest.
+
+### ES6+
+- [**ES6 features**](http://git.io/es6features)  
+A cool overview of all the new features in ES6.
+- [**ES6 modules**](http://www.2ality.com/2014/09/es6-modules-final.html)  
+An overview of the new ES6 module system.
+
+### Flux
+- [**Flux overview**](https://facebook.github.io/flux/docs/overview.html)  
+General overview of the Flux pattern
+- [**What the Flux?**](http://jonathancreamer.com/what-the-flux/)  
+A nice writeup about Flux. 
+
+### React Native
+- [**React Native Docs**](https://facebook.github.io/react-native/docs/getting-started.html)  
+Guides and docs for the project
+- [**React Native Styles**](https://facebook.github.io/react-native/docs/style.html#content)  
+How to use RN StyleSheets and a reference for the allowed CSS properties for each component type.
+- [**React based Flexbox demo**](http://blog.krawaller.se/posts/a-react-app-demonstrating-css3-flexbox/)  
+Incredibly useful for playing with flexbox layouts. 
+- [**Animations in RN**](https://facebook.github.io/react-native/docs/animations.html#content)  
+A simplistic intro to the `Animated` API. You should watch [this talk](https://www.youtube.com/watch?v=xDlfrcM6YBk) for more info and examples. 
+- [**react.parts**](https://react.parts/native-ios)  
+A useful component library for react native.
+
+### App related
+- [**Creating app Icons**](http://appicontemplate.com/ios8)  
+App icon template for Photoshop + auto exporting actions for multiple sizes.
+- [**Ionicons**](http://ionicons.com/)  
+An icon collection that you can use in your project, see [react-native-vector-icons usage](https://github.com/oblador/react-native-vector-icons#usage)
+- [**CircleCI**](https://circleci.com/)   
+Awesome continues integration
