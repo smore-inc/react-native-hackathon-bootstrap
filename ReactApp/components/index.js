@@ -19,6 +19,7 @@ import {React, Icon, Image, Navigator, StyleSheet} from 'components';
 import React from 'react-native';
 import PureComponent from 'lib/PureComponent';
 import Icon from 'react-native-vector-icons/Ionicons';
+import {StoreComponent} from 'lib/flux';
 
 const {
   // Components
@@ -140,8 +141,8 @@ const components = {
   Colors: require('./Colors'), // Global colors const
 
   // Additional components
-  Icon
-
+  Icon,
+  StoreComponent
 };
 
 export default components;

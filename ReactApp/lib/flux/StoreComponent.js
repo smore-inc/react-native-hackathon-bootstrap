@@ -27,7 +27,7 @@ import Component from '../PureComponent';
  *      return [MessageStore, ConversationStore];
  *    }
  *
- *    static getStateFromStores(props){
+ *    static getStateFromStores(state, props){
  *      return {
  *        message: MessageStore.getById(props.id)
  *        conversationCount: ConversationStore.getConversationCountForMessage(props.id)
@@ -54,7 +54,7 @@ class StoreComponent extends Component {
 
   componentWillMount() {
     // Setup initial state
-    this.state = objectAssign({}, this.state, this.getStateFromStores(this.props));
+    this.state = objectAssign({}, this.state, this.constructor.getStateFromStores(this.state, this.props));
   }
 
   /****

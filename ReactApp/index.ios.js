@@ -5,6 +5,7 @@
 
 
 import {React, Component, View, Icon, Icons, Colors, Text, StyleSheet, AppRegistry} from 'components';
+import StoreComponentDemo from './StoreComponentDemo';
 
 class HackApp extends Component{
 
@@ -22,6 +23,12 @@ class HackApp extends Component{
           Press Cmd+R to reload,{'\n'}
           Cmd+D or shake for dev menu
         </Text>
+
+        <View style={styles.demo}>
+          <Text style={styles.instructions}>StoreComponent demo</Text>
+          <StoreComponentDemo title="First"/>
+          <StoreComponentDemo title="Second"/>
+        </View>
       </View>
     );
   }
@@ -46,6 +53,12 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
+
+  demo:{
+    width:300,
+    marginTop: 30,
+    padding:10
+  }
 });
 
 AppRegistry.registerComponent('HackApp', () => HackApp);
