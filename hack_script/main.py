@@ -7,7 +7,7 @@ import sys
 from time import sleep
 from argparse import ArgumentParser
 from termcolor import colored
-from utils import run_command, has_command, report, report_success, Icons
+from utils import run_command, has_command, report, report_success, Icons, react_native_version
 
 def run_init_command(args):
     """Initialize the envirionment."""
@@ -17,6 +17,11 @@ def run_init_command(args):
            icon=Icons.coffee)
     print ""
     sleep(3)
+
+    if not has_command("pod"):
+        report("Setting up CocoaPods (we may need your password for this)", section=True)
+        run_command("sudo gem install cocoapods --no-ri --no-rdoc")
+        report_success("Installed cocoapods!")
 
     report("Testing for brew", section=True)
     if not has_command("brew"):
@@ -30,7 +35,8 @@ def run_init_command(args):
 
     report("Installing iojs", section=True)
     run_command("brew unlink node")
-    run_command("brew install iojs && brew link iojs --force")
+    run_command("brew install iojs")
+    run_command("brew link iojs --force")
     run_command("brew install watchman")
     run_command("brew install flow")
     report_success("Installed iojs")
@@ -38,13 +44,12 @@ def run_init_command(args):
     report("Instaling global npm packages", section=True)
     run_command("npm install -g react-native-cli gulp")
 
-    report("Instaling project npm packages", section=True)
-    run_command("npm install")
+    report("Instaling project npm packages (this may take a while)", section=True)
+    run_command("npm install", hide_output=True)
     report_success("Installed all node dependencies!")
+    run_patch_es6_modules_command(args)
 
-    report("Setting up CocoaPods", section=True)
-    run_command("sudo gem install cocoapods --no-ri --no-rdoc")
-    report("Installed cocoapods, updating pods")
+    report("Updating pods")
     run_command("pod install")
 
     report_success("All done!")
@@ -60,6 +65,33 @@ def run_atom_init_command(args):
     run_command('apm install linter linter-eslint pigments react tree-view-git-status')
     report_success("Installed atom packages!")
     run_command("atom .")
+
+
+BEFORE_PATCH_VERSION = r"""exports.IMPORT_RE = /(\bimport\s+?(?:.+\s+?from\s+?)?)(['"])([^'"]+)(\2)/g;"""
+AFTER_PATCH_VERSION = r"""exports.IMPORT_RE = /(\bimport\s+(?:[^'"]+\s+from\s+)??)(['"])([^'"]+)(\2)/g;"""
+
+def run_patch_es6_modules_command(args):
+    """patches RN 0.9 to support multiline imports"""
+    if react_native_version() != "0.9.0-rc":
+        report("Non supported react-native version, skipping packager patching.")
+        return
+
+    patterns_file = "node_modules/react-native/packager/" + \
+                    "react-packager/src/DependencyResolver/replacePatterns.js"
+
+    content = open(patterns_file).read()
+    if AFTER_PATCH_VERSION in content:
+        report("Your version was already patched, skipping packager patching.")
+        return
+
+    if BEFORE_PATCH_VERSION not in content:
+        report("Can't find replacement target, skipping packager patching.")
+        return
+
+    content = content.replace(BEFORE_PATCH_VERSION, AFTER_PATCH_VERSION)
+    open(patterns_file,'w').write(content)
+    report_success("Successfuly patched packager.")
+
 
 
 ##############################################################################
@@ -82,7 +114,7 @@ def _get_parser():
     # commands
     init_cmd = subparsers.add_parser('init', help='Init the environment and open the XCode project')
     init_cmd = subparsers.add_parser('atom-init', help='Install useful atom plugins')
-
+    init_cmd = subparsers.add_parser('patch-packager', help='Patch packager to support multiline es6 imports (http://tinyurl.com/ovs5gh8)')
     open_cmd = subparsers.add_parser('open', help='Open the project in XCode')
 
     return parser
@@ -103,6 +135,9 @@ def run(args, unknown_args, parser):
 
     if args.subparser == 'atom-init':
         run_atom_init_command(args)
+
+    if args.subparser == 'patch-packager':
+        run_patch_es6_modules_command(args)
 
 
 def start():

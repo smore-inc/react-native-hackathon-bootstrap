@@ -2,7 +2,7 @@ import subprocess
 from time import sleep
 import os
 from termcolor import colored
-
+import json
 
 
 class Icons:
@@ -50,3 +50,12 @@ def report(message, color="cyan", icon=None, section=False):
 
 def report_success(message):
     report(message, icon=Icons.corn, color="green")
+
+def react_native_version():
+    """Get the current RN version"""
+    package_json_path = 'node_modules/react-native/package.json'
+
+    if not os.path.isfile(package_json_path):
+        raise RuntimeError("React native is not installed! run npm install!")
+
+    return json.load(open(package_json_path)).get('version')
