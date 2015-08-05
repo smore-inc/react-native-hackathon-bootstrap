@@ -25,6 +25,18 @@ Quickly setup everything you need for developing react native apps in hackathons
 - [Gulp](http://gulpjs.com/) file with lint/test/clear-cache/bundle tasks
 
 ## Getting started
+
+**Creating your own repo based on this one**  
+- Create a new *empty* git repo (using github or git init)
+- After you cloned the repo, go to the repo folder and type:  
+```
+git remote add upstream https://github.com/smore-inc/react-native-hackathon-bootstrap.git
+git pull upstream master
+git push origin master
+```
+- You're all set! now go and run the setup script!
+
+**Running setup script**  
 *The setup script only works for mac, sorry*
 First, you need to download and install [XCode 6.4](https://developer.apple.com/xcode/downloads/)
 Then, go to the project folder and run:
