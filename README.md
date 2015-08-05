@@ -1,3 +1,5 @@
+![Logo](http://i.imgur.com/7e1vuW1.png)
+
 # react-native-hackathon-bootstrap
 Quickly setup everything you need for developing react native apps in hackathons.
 
