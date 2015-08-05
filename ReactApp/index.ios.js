@@ -26,8 +26,8 @@ class HackApp extends Component{
 
         <View style={styles.demo}>
           <Text style={styles.instructions}>StoreComponent demo</Text>
-          <StoreComponentDemo title="First"/>
-          <StoreComponentDemo title="Second"/>
+          <StoreComponentDemo title="Component A"/>
+          <StoreComponentDemo title="Component B"/>
         </View>
       </View>
     );

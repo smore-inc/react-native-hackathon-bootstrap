@@ -6,7 +6,7 @@
 *
 */
 
-import {React, StoreComponent, View, Text, StyleSheet, TouchableOpacity} from 'components';
+import {React, StoreComponent, View, Text, StyleSheet, TouchableOpacity, Colors} from 'components';
 import {SampleStore, SampleActions} from 'data';
 
 
@@ -44,7 +44,7 @@ class StoreComponentDemo extends StoreComponent{
 
 const styles = StyleSheet.create({
   container: {
-    borderColor: '#a10',
+    borderColor: Colors.Link,
     borderWidth: 1,
     borderRadius: 10,
     padding: 10,
@@ -62,6 +62,7 @@ const styles = StyleSheet.create({
   title: {
     flex:1,
     fontWeight: 'bold',
+    color: Colors.Title
   }
 
 });
