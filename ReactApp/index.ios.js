@@ -4,20 +4,14 @@
 */
 
 
-import React from 'react-native';
-const {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View,
-  Component,
-} = React;
+import {React, Component, View, Icon, Icons, Colors, Text, StyleSheet, AppRegistry} from 'components';
 
 class HackApp extends Component{
 
   render(){
     return (
       <View style={styles.container}>
+        <Icon name={Icons.Welcome} size="30" color={Colors.Link}/>
         <Text style={styles.welcome}>
           Welcome to React Native!
         </Text>
@@ -40,7 +34,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: Colors.LightBackground,
   },
   welcome: {
     fontSize: 20,
