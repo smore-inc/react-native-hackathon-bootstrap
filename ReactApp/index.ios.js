@@ -12,7 +12,7 @@ class HackApp extends Component{
   render(){
     return (
       <View style={styles.container}>
-        <Icon name={Icons.Welcome} size="30" color={Colors.Link}/>
+        <Icon name={Icons.Welcome} size={30} color={Colors.Link}/>
         <Text style={styles.welcome}>
           Welcome to React Native!
         </Text>
