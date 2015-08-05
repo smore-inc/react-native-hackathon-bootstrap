@@ -5,6 +5,7 @@ machine:
 dependencies:
   override:
     - npm install;exit 0
+    - ./hack patch-packager
 
 test:
   pre:
