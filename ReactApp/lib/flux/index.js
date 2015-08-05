@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   Store: require('./Store'),
   Dispatcher: require('./Dispatcher'),
   Actions: require('./Actions'),

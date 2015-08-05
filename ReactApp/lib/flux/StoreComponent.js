@@ -70,10 +70,11 @@ class StoreComponent extends Component {
    * It is used for querying the stores for new information, and the component's state is updated with the
    * result.
    *
+   * @param {Object} state the current state
    * @param {Object} props the current props
    * @returns {Object}
    */
-  static getStateFromStores(props) {
+  static getStateFromStores(state, props) {
     // Default
     return {};
   }
@@ -117,7 +118,7 @@ class StoreComponent extends Component {
   }
 
   _updateStateFromStores(props) {
-    this.setState(this.constructor.getStateFromStores(props));
+    this.setState(this.constructor.getStateFromStores(this.state, props));
   }
 
   /***

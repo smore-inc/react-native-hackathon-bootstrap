@@ -3,6 +3,7 @@
 * https://github.com/facebook/react-native
 */
 
+
 import React from 'react-native';
 const {
   AppRegistry,
