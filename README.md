@@ -107,4 +107,4 @@ App icon template for Photoshop + auto exporting actions for multiple sizes.
 - [**Ionicons**](http://ionicons.com/)  
 An icon collection that you can use in your project, see [react-native-vector-icons usage](https://github.com/oblador/react-native-vector-icons#usage)
 - [**CircleCI**](https://circleci.com/)   
-Awesome continues integration
+Awesome continuous integration
